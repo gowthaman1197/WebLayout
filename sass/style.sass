@@ -1,0 +1,106 @@
+/* 4. Import which is used to import a couple of files. */
+@import "main"
+
+/* 1 - Variable is a place where we can store values are such as like color, font and so on that you can be reused throughout your stylesheet. Sass uses $ symbol for creating a variable. */
+
+$nav-bgcolor: #333
+$nav-color: transparent
+$top: 0px
+$bottom: 20px
+$jumbotronbg_line: #00ffe7
+
+.space
+  margin-top: $top
+  margin-bottom: $bottom
+
+  p
+    padding-top: 20px
+/* 5. Mixin can be used for vendor prefix. You can pass values to it and reuse it throughtout. */
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+
+=transition-property($opacity)
+  -webkit-transition-property: $opacity
+  -ms-transition-property: $opacity
+      transition-property: $opacity
+
+.navbar
+  +border-radius(0)
+  margin-bottom: 0px
+
+.navbar-inverse
+    background-color: $nav-bgcolor
+    border-color: $nav-color
+
+.line
+  margin: 0 auto
+  width: 50px
+  display: block
+  height: 2px
+  background-color: $jumbotronbg_line
+
+.no-space
+  margin: 0px
+  padding: 0px
+
+/* 6. Extend - You share a set of CSS properties from one selector to another by using @extend. */
+
+
+.jumbotron
+  @extend .space
+  background-color: $jumbotronbg_line !important
+
+/* 7. Operators - Sass has operators are such as +, -, *, /, % which are used for calculation */
+section
+  margin-top: $top + 30
+  margin-bottom: $bottom
+
+.quote
+    color: rgba(0,0,0,.1)
+    text-align: center
+    margin-bottom: 30px
+
+/* 2. Sass will nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.  */
+
+#fade-quote-carousel.carousel
+  padding-bottom: 60px
+
+  .carousel-inner .item
+    +transition-property(0)
+  .carousel-inner .active
+    +transition-property(1)
+
+  .carousel-indicators
+    bottom: 10px
+
+  .carousel-indicators li
+    background-color: $jumbotronbg_line
+    border: none
+
+#fade-quote-carousel blockquote
+  text-align: center
+  border: none
+
+#fade-quote-carousel .profile-circle
+    width: 100px
+    height: 100px
+    margin: 0 auto
+    border-radius: 100px
+
+.pagination
+  display: inline-block
+  a
+    color: #000
+    float: left
+    padding: 8px 16px
+    text-decoration: none
+
+  a.active
+    background-color: #000
+    color: #fff
+
+  a:hover:not(.active)
+    background-color: #333

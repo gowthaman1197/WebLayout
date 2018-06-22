@@ -1,0 +1,90 @@
+/* 4. Import which is used to import a couple of files. */
+/* 2. Partial css file that contain little snippets of css that can be included in other sass file. It will help things more easier. It is named with underscore like _main.sass which we can be included in other sass by using @import. */
+*, body {
+  margin: 0;
+  padding: 0; }
+
+/* 1 - Variable is a place where we can store values are such as like color, font and so on that you can be reused throughout your stylesheet. Sass uses $ symbol for creating a variable. */
+.space, .jumbotron {
+  margin-top: 0px;
+  margin-bottom: 20px; }
+  .space p, .jumbotron p {
+    padding-top: 20px; }
+
+/* 5. Mixin can be used for vendor prefix. You can pass values to it and reuse it throughtout. */
+.navbar {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  margin-bottom: 0px; }
+
+.navbar-inverse {
+  background-color: #333;
+  border-color: transparent; }
+
+.line {
+  margin: 0 auto;
+  width: 50px;
+  display: block;
+  height: 2px;
+  background-color: #00ffe7; }
+
+.no-space {
+  margin: 0px;
+  padding: 0px; }
+
+/* 6. Extend - You share a set of CSS properties from one selector to another by using @extend. */
+.jumbotron {
+  background-color: #00ffe7 !important; }
+
+/* 7. Operators - Sass has operators are such as +, -, *, /, % which are used for calculation */
+section {
+  margin-top: 30px;
+  margin-bottom: 20px; }
+
+.quote {
+  color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 30px; }
+
+/* 2. Sass will nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.  */
+#fade-quote-carousel.carousel {
+  padding-bottom: 60px; }
+  #fade-quote-carousel.carousel .carousel-inner .item {
+    -webkit-transition-property: 0;
+    -ms-transition-property: 0;
+      -ms-transition-property-transition-property: 0; }
+  #fade-quote-carousel.carousel .carousel-inner .active {
+    -webkit-transition-property: 1;
+    -ms-transition-property: 1;
+      -ms-transition-property-transition-property: 1; }
+  #fade-quote-carousel.carousel .carousel-indicators {
+    bottom: 10px; }
+  #fade-quote-carousel.carousel .carousel-indicators li {
+    background-color: #00ffe7;
+    border: none; }
+
+#fade-quote-carousel blockquote {
+  text-align: center;
+  border: none; }
+
+#fade-quote-carousel .profile-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 100px; }
+
+.pagination {
+  display: inline-block; }
+  .pagination a {
+    color: #000;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none; }
+  .pagination a.active {
+    background-color: #000;
+    color: #fff; }
+  .pagination a:hover:not(.active) {
+    background-color: #333; }
+
+/*# sourceMappingURL=style.css.map */
